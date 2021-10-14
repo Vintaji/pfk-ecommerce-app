@@ -23,7 +23,7 @@ app.get('/login', function (req, res) {
 });
 
 app.get('/admin', async function (req, res) {
-    const response = await fetch('http://localhost:3001/balance', {
+    const response = await fetch('167.71.22.230:3001/balance', {
         method: "GET",
         headers: {
             "Content-Type": "Application/json",
