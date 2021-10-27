@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+  <title>KapiWear - Cart</title>
 <head>
     <%- include('../partials/head'); %>
 </head>
@@ -8,18 +9,23 @@
 <header>
     <%- include('../partials/header'); %>
 </header>
-
-<main>
-	<div class="conteudo">
-		<div class="conteudointerno">
-			<div class="outrosprodutos">
-				CART
+<br>
+<div class="conteudo">
+  <div class="conteudointerno">
+	<form class="cep" id="form_cep">
+		<div class="mb-3">
+			<div>CART</div>
+			<hr>
+			<div>
+			  <label for="postCode" class="form-label">CEP</label>
+			  <input type="text" id="postCode" name="postCode" class="form-control col-md-6" required />
+			  <br>
+			  <button id="btn_cep" type="button" class="btn btn-secondary">Calcular</button>
 			</div>
-</main>
-
+		  </div>
+		</div>
+	</form>
+	<script src="js/correios.js"></script>
 <footer>
     <%- include('../partials/footer'); %>
 </footer>
-
-</body>
-</html>

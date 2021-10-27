@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+	<title>KapiWear - Home</title>
 <head>
     <%- include('../partials/head'); %>
 </head>
@@ -15,22 +16,10 @@
 			<div class="outrosprodutos">
 				T-SHIRTS
 			</div>
-			<div class="fotos">
-				<div>
-					<img src="./img/produto.jpg"/>
-					<img src="./img/produto2.jpg"/>
-					<img src="./img/produto3.jpg"/>
-				</div>
-				<div class="valores">
-					<p>R$ 99</p>
-					<p>R$ 99</p>
-					<p>R$ 99</p>
-				</div>
-				<div class="botoes">
-					<button>ADD CART</button>
-					<button>ADD CART</button>
-					<button>ADD CART</button>
-				</div>
+			<div id="products">
+			</div>
+			
+			<div id="cart">
 			</div>
 		</div>
 	</div>
@@ -39,6 +28,7 @@
 <footer>
     <%- include('../partials/footer'); %>
 </footer>
+<script src="js/products.js"></script>
 
 </body>
 </html>
