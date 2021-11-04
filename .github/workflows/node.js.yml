@@ -17,11 +17,11 @@ jobs:
     needs: [CI]
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using sshkey
+    - name: executing remote ssh commands using ssh key
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.SSH_PORT }}
-        script: sh PFK/pfk-ecommerce-app/deploy.sh
+        script: sh PFK/pfk-ecommerce-api/deploy.sh
