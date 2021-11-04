@@ -13,12 +13,15 @@
   "dependencies": {
     "axios": "^0.21.4",
     "bootstrap": "^5.1.1",
+    "cookie-parser": "^1.4.5",
+    "cookie-session": "^1.4.0",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "node-fetch": "^2.6.5",
     "nodemon": "^2.0.13",
-    "soap": "^0.42.0"
+    "soap": "^0.42.0",
+    "xml-to-json-stream": "^1.1.0"
   },
   "devDependencies": {
     "eslint": "^8.0.1"

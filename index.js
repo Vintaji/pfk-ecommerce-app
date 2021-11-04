@@ -1,6 +1,9 @@
 var express = require('express');
 var app = express();
 const fetch = require('node-fetch');
+const cookieParser = require('cookie-parser');
+
+app.use(cookieParser());
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -24,6 +27,26 @@ app.get('/login', function (req, res) {
     res.render('pages/login');
 });
 
+app.get('/politicy', function (req, res) {
+    res.render('pages/politicy');
+});
+
+/* app.use (function (req, res, next){
+    const token = req.cookies;
+    try {
+        const user = (token);
+        req.user = user;
+        next();
+    } catch (err) {
+        console.log('teste');
+        res.clearCookie('token');
+    }
+}); */
+
+app.get('/cart', function (req, res) {
+    res.render('pages/cart');
+});
+
 app.get('/admin', async function (req, res) {
     const response = await fetch('http://localhost:3001/balance', {
         method: 'GET',
@@ -36,28 +59,9 @@ app.get('/admin', async function (req, res) {
     res.render('pages/admin', { balance: data });
 });
 
-app.get('/user', async function (req, res) {
-    const response = await fetch('http://localhost:3001/login', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'Application/json',
-            'Authorization': 'Bearer'
-        }
-    });
-    const data = await response.json();
-    res.render('pages/user', { balance: data });
-});
-
-app.get('/charges', function (req, res) {
-    res.render('pages/charges');
-});
-
-app.get('/payment', function (req, res) {
-    res.render('pages/payment');
-});
-
-app.get('/cart', function (req, res) {
-    res.render('pages/cart');
+app.get('/user', function (req, res) {
+    res.clearCookie('token');
+    res.render('pages/user');
 });
 
 app.listen(5500, () => {

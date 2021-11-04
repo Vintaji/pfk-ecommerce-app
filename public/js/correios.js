@@ -1,5 +1,4 @@
 const soap = require('soap');
-
 const url = 'http://ws.correios.com.br/calculador/CalcPrecoPrazo.asmx?wsdl';
 
 soap.createClient(url, (err, client) => {
@@ -22,6 +21,10 @@ soap.createClient(url, (err, client) => {
             nVlValorDeclarado: '0',
             sCdAvisoRecebimento: 'N'
         }, (err, res) => {
+            function valorTotal(valor) {
+                let element = document.getElementById("form_cep");
+                innerHTML
+            }
             console.log(res.CalcPrecoPrazoResult.Servicos.cServico[0].Valor);
         });
     }
