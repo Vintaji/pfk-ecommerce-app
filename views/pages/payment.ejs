@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+	<title>KapiWear - Payment</title>
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body>
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+<br>
+<main>
+	<div class="conteudo">
+		<div class="conteudointerno">
+            <h4>CART</h4><BR>
+            <div class="formularios">
+                <form class="pay" id="form-pay">
+                    Dados do Cartão:<br>
+                <div class="mb-3">
+                    <label for="cardNumber" class="form-label">Número do Cartão</label>
+                    <input type="text" id="cardNumber" name="cardNumber" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label for="holderName" class="form-label">Nome do Titular do Cartão</label>
+                    <input type="text" id="holderName" name="holderName" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label for="expirationMonth" class="form-label">Mês de Validade</label>
+                    <input type="text" id="expirationMonth" name="expirationMonth" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label for="expirationYear" class="form-label">Ano de Validade</label>
+                    <input type="text" id="expirationYear" name="expirationYear" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label for="securityCode" class="form-label">Código Segurança (CVV)</label>
+                    <input type="text"  id="securityCode" name="securityCode" class="form-control" required />
+                </div>
+                <div>
+                    <button id="btn_pay" type="button" class="btn btn-secondary">PAGAR</button>
+                </div>
+                </form>
+              </div>
+		</div>
+        </div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+<script src="js/paymentProduct.js"></script>
+<script type="text/javascript">
+    var checkout = new DirectCheckout('PUBLIC_TOKEN');
+    /* Em sandbox utilizar o construtor new DirectCheckout('PUBLIC_TOKEN', false); */            
+  
+    function generateHash() {
+      var cardData = {
+          cardNumber: '0000000000000000',
+          holderName: 'Nome do Titular do Cartão',
+          securityCode: '000',
+          expirationMonth: '12',
+          expirationYear: '2045'
+        };
+    }
+  
+    /* isValidSecurityCode: Valida número do cartão de crédito (retorna true se for válido) */
+    checkout.isValidCardNumber(cardData.cardNumber);
+  
+    /* isValidSecurityCode: Valida código de segurança do cartão de crédito (retorna true se for válido) */
+    checkout.isValidSecurityCode(cardData.cardNumber, cardData.securityCode);
+  
+    /* isValidExpireDate: Valida data de expiração do cartão de crédito (retorna true se for válido) */
+    checkout.isValidExpireDate(cardData.expirationMonth, cardData.expirationYear);
+  
+    /* isValidCardData: Validação dos dados do cartão de crédito(retorna true se for válido) */
+    checkout.isValidCardData(cardData, function(error) {
+        /* Erro - A variável error conterá o erro ocorrido durante a validação dos dados do cartão de crédito */
+    });
+  
+    /* getCardType: Obtem o tipo de cartão de crédito (bandeira) */
+    checkout.getCardType(cardData.cardNumber);
+  </script>
+</body>
+</html>

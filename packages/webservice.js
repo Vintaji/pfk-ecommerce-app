@@ -10,19 +10,19 @@ module.exports = {
             return null;
         }
     },
-    register: async() => {
+    order: async() => {
         try {
-            const response = await axios.post('http://localhost:3001/register');
+            const response = await axios.post('http://localhost:3001/order');
             return response.data;
         } catch(err) {
             console.log(err);
             return null;
         }
     },
-    login: async() => {
+    orders: async() => {
         try {
-            const response = await axios.get('http://localhost:3001/login');
-            return response.data;
+            const response = await axios.get('http://localhost:3001/orders');
+            return response.order;
         } catch(err) {
             console.log(err);
             return null;

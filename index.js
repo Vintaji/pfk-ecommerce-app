@@ -13,12 +13,6 @@ app.get('/', function (req, res) {
     res.render('pages/index');
 });
 
-app.get('/register', function (req, res) {
-    res.render('pages/register');
-});
-app.post('/register', function (req, res) {
-    res.render('pages/register');
-});
 app.post('/login', function (req, res) {
     res.render('pages/login');
 });
@@ -30,6 +24,15 @@ app.get('/login', function (req, res) {
 app.get('/politicy', function (req, res) {
     res.render('pages/politicy');
 });
+
+/* app.get('/', function (req, res) {
+    Product.find(function (err, products) {
+        if(err)
+            console.log(err);
+
+        res.render('products');
+    });
+}); */
 
 /* app.use (function (req, res, next){
     const token = req.cookies;
@@ -43,10 +46,6 @@ app.get('/politicy', function (req, res) {
     }
 }); */
 
-app.get('/cart', function (req, res) {
-    res.render('pages/cart');
-});
-
 app.get('/admin', async function (req, res) {
     const response = await fetch('http://localhost:3001/balance', {
         method: 'GET',
@@ -56,7 +55,35 @@ app.get('/admin', async function (req, res) {
         }
     });
     const data = await response.json();
-    res.render('pages/admin', { balance: data });
+    const order = await fetch('http://localhost:3001/orders', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'Application/json',
+            'Authorization': 'Bearer'
+        }
+    });
+    const orders = await order.json();
+    res.render('pages/admin', { balance: data, orders: orders });
+});
+
+app.get('/cart', function (req, res) {
+    res.render('pages/cart');
+});
+
+app.get('/payment', function (req, res) {
+    res.render('pages/payment');
+});
+
+app.get('/order', function (req, res) {
+    res.render('pages/order');
+});
+
+app.get('/account', function (req, res) {
+    res.render('pages/account');
+});
+
+app.get('/adress', function (req, res) {
+    res.render('pages/adress');
 });
 
 app.get('/user', function (req, res) {

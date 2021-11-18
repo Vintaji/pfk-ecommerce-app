@@ -4,9 +4,9 @@ const register = {
     },
 
     validate: async () => {
-        const name = document.getElementsByName('name')[0].value;
-        const email = document.getElementsByName('email')[0].value;
-        const password = document.getElementsByName('password')[0].value;
+        const name = document.getElementsByName('name2')[0].value;
+        const email = document.getElementsByName('email2')[0].value;
+        const password = document.getElementsByName('password2')[0].value;
 
         const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         const regexName = /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/s;
@@ -27,7 +27,7 @@ const register = {
         }
         if (!validate) {
             alert(message);
-        } else {
+        } else {    
             register.send();
         }
     },
@@ -40,9 +40,9 @@ const register = {
                 'Accept': 'application/json'
             },
             body: JSON.stringify({
-                name: document.getElementsByName('name')[0].value,
-                email: document.getElementsByName('email')[0].value,
-                password: document.getElementsByName('password')[0].value
+                name: document.getElementsByName('name2')[0].value,
+                email: document.getElementsByName('email2')[0].value,
+                password: document.getElementsByName('password2')[0].value
             })
         });
 

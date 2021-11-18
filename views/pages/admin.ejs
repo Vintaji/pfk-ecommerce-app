@@ -12,8 +12,116 @@
 <div class="conteudo">
     <div class="conteudointerno">
         <br>
-        <h4>ADMIN</h6><BR>
+        <h4>ADMIN</h4><BR>
         Saldo da empresa: R$ <%= balance.Saldo %>
+        <br>
+        <br>
+        <h5>Ultimos Pedidos:</h5>
+        <div class="pedidos">
+        Produto:<br>
+        Camisa: <%-JSON.stringify(orders.Pedidos[0].product.name).slice(1, -1)%>
+        <br>
+        Preço: R$ <%-JSON.stringify(orders.Pedidos[0].product.price)%>
+        <br>
+        Tamanho: <%-JSON.stringify(orders.Pedidos[0].product.size).slice(1, -1)%>
+        <br>
+        Cor: <%-JSON.stringify(orders.Pedidos[0].product.color).slice(1, -1)%>
+        <br>
+        <br>
+        Endereço:<br>
+        Rua: <%-JSON.stringify(orders.Pedidos[0].adress.street).slice(1, -1)%>
+        <br>
+        Numéro: <%-JSON.stringify(orders.Pedidos[0].adress.number).slice(1, -1)%>
+        <br>
+        Cidade: <%-JSON.stringify(orders.Pedidos[0].adress.city).slice(1, -1)%>
+        <br>
+        Estado: <%-JSON.stringify(orders.Pedidos[0].adress.state).slice(1, -1)%>
+        <br>
+        CEP: <%-JSON.stringify(orders.Pedidos[0].adress.postCode).slice(1, -1)%>
+        <br>
+        <br>
+        Dado do Comprador:<br>
+        Nome: <%-JSON.stringify(orders.Pedidos[0].owner.nome).slice(1, -1)%>
+        <br>
+        CPF: <%-JSON.stringify(orders.Pedidos[0].owner.cpf).slice(1, -1)%>
+        <br>
+        Telefone: <%-JSON.stringify(orders.Pedidos[0].owner.telefone).slice(1, -1)%>
+        <br><br>
+        Data do Pedido:<br>
+        <%-JSON.stringify(orders.Pedidos[0].orderAt).slice(1, -15)%> as <%-JSON.stringify(orders.Pedidos[1].orderAt).slice(12,-6)%>
+        <br><br>
+        Status do Pedido:<br>
+        </div>
+        <div class="pedidos">
+            Produto:<br>
+            Camisa: <%-JSON.stringify(orders.Pedidos[1].product.name).slice(1, -1)%>
+            <br>
+            Preço: R$ <%-JSON.stringify(orders.Pedidos[1].product.price)%>
+            <br>
+            Tamanho: <%-JSON.stringify(orders.Pedidos[1].product.size).slice(1, -1)%>
+            <br>
+            Cor: <%-JSON.stringify(orders.Pedidos[1].product.color).slice(1, -1)%>
+            <br>
+            <br>
+            Endereço:<br>
+            Rua: <%-JSON.stringify(orders.Pedidos[1].adress.street).slice(1, -1)%>
+            <br>
+            Numéro: <%-JSON.stringify(orders.Pedidos[1].adress.number).slice(1, -1)%>
+            <br>
+            Cidade: <%-JSON.stringify(orders.Pedidos[1].adress.city).slice(1, -1)%>
+            <br>
+            Estado: <%-JSON.stringify(orders.Pedidos[1].adress.state).slice(1, -1)%>
+            <br>
+            CEP: <%-JSON.stringify(orders.Pedidos[1].adress.postCode).slice(1, -1)%>
+            <br>
+            <br>
+            Dado do Comprador:<br>
+            Nome: <%-JSON.stringify(orders.Pedidos[1].owner.nome).slice(1, -1)%>
+            <br>
+            CPF: <%-JSON.stringify(orders.Pedidos[1].owner.cpf).slice(1, -1)%>
+            <br>
+            Telefone: <%-JSON.stringify(orders.Pedidos[1].owner.telefone).slice(1, -1)%>
+            <br><br>
+            Data do Pedido:<br>
+            <%-JSON.stringify(orders.Pedidos[0].orderAt).slice(1, -15)%> as <%-JSON.stringify(orders.Pedidos[1].orderAt).slice(12,-6)%>
+            <br><br>
+            Status do Pedido:<br>
+            </div>
+            <div class="pedidos">
+                Produto:<br>
+                Camisa: <%-JSON.stringify(orders.Pedidos[2].product.name).slice(1, -1)%>
+                <br>
+                Preço: R$ <%-JSON.stringify(orders.Pedidos[2].product.price)%>
+                <br>
+                Tamanho: <%-JSON.stringify(orders.Pedidos[2].product.size).slice(1, -1)%>
+                <br>
+                Cor: <%-JSON.stringify(orders.Pedidos[2].product.color).slice(1, -1)%>
+                <br>
+                <br>
+                Endereço:<br>
+                Rua: <%-JSON.stringify(orders.Pedidos[2].adress.street).slice(1, -1)%>
+                <br>
+                Numéro: <%-JSON.stringify(orders.Pedidos[2].adress.number).slice(1, -1)%>
+                <br>
+                Cidade: <%-JSON.stringify(orders.Pedidos[2].adress.city).slice(1, -1)%>
+                <br>
+                Estado: <%-JSON.stringify(orders.Pedidos[2].adress.state).slice(1, -1)%>
+                <br>
+                CEP: <%-JSON.stringify(orders.Pedidos[2].adress.postCode).slice(1, -1)%>
+                <br>
+                <br>
+                Dado do Comprador:<br>
+                Nome: <%-JSON.stringify(orders.Pedidos[2].owner.nome).slice(1, -1)%>
+                <br>
+                CPF: <%-JSON.stringify(orders.Pedidos[2].owner.cpf).slice(1, -1)%>
+                <br>
+                Telefone: <%-JSON.stringify(orders.Pedidos[2].owner.telefone).slice(1, -1)%>
+                <br><br>
+                Data do Pedido:<br>
+                <%-JSON.stringify(orders.Pedidos[0].orderAt).slice(1, -15)%> as <%-JSON.stringify(orders.Pedidos[1].orderAt).slice(12,-6)%>
+                <br><br>
+                Status do Pedido:<br>
+                </div>
     </div>
 </div>
 

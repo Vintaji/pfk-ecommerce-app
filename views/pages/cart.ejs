@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <title>KapiWear - Cart</title>
+	<title>KapiWear - Cart</title>
 <head>
     <%- include('../partials/head'); %>
 </head>
@@ -10,23 +10,92 @@
     <%- include('../partials/header'); %>
 </header>
 <br>
-<div class="conteudo">
-  <div class="conteudointerno">
-	<form class="cep">
-		<div class="mb-3">
-			<div>CART</div>
-			<hr>
-			<div id="form_cep"></div>
-			<div>
-			  <label for="postCode" class="form-label">CEP</label>
-			  <input type="text" id="postCode" name="postCode" class="form-control col-md-6" required />
-			  <br>
-			  <button id="btn_cep" type="button" class="btn btn-secondary">Calcular</button>
-			</div>
-		  </div>
+<main>
+	<div class="conteudo">
+		<div class="conteudointerno">
+            <h4>CART</h4><BR>
+            <div class="formularios">
+                <form class="buy" id="form-buy">
+                    Produto:<br>
+                    <div class="mb-3">
+                    <label for="name" class="form-label">Camisa</label>
+                    <select type="text" id="name" name="name" class="form-control">
+                        <option>Tupac</option>
+                        <option>Homes</option>
+                        <option>Logo</option>
+                    </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Valor</label>
+                        <input type="number" id="price" name="price" class="form-control" value="99" required readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="size" class="form-label">Tamanhos</label>
+                        <select type="text" id="size" name="size" class="form-control">
+                            <option>P</option>
+                            <option>M</option>
+                            <option>G</option>
+                            <option>GG</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="color" class="form-label">Cores</label>
+                        <select type="text" id="color" name="color" class="form-control">
+                            <option>Branco</option>
+                            <option>Preto</option>
+                            <option>Cinza</option>
+                            <option>Musgo</option>
+                            <option>Bordô</option>
+                        </select>
+                    </div>
+                    <br>
+                    Endereço de Entrega:<br>
+                    <div class="mb-3">
+                        <label for="street" class="form-label">Rua</label>
+                        <input type="street" id="street" name="street" class="form-control" required />
+                      </div>
+                      <div class="mb-3">
+                        <label for="number" class="form-label">Número</label>
+                        <input type="text" id="number" name="number" class="form-control" required />
+                      </div>
+                      <div class="mb-3">
+                        <label for="city" class="form-label">Cidade</label>
+                        <input type="text" id="city" name="city" class="form-control" required />
+                      </div>
+                    <div class="mb-3">
+                        <label for="state" class="form-label">UF (Ex: São Paulo = SP)</label>
+                        <input type="text" id="state" name="state" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="postCode" class="form-label">CEP (EX 00000000)</label>
+                        <input type="text" id="postCode" name="postCode" class="form-control" required />
+                    </div>
+                    <br>
+                    Dados do Comprador:<br>
+                    <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" id="nome" name="nome" class="form-control" required />
+                  </div>
+                  <div class="mb-3">
+                    <label for="cpf" class="form-label">CPF</label>
+                    <input type="text" id="cpf" name="cpf" class="form-control" required />
+                  </div>
+                  <div class="mb-3">
+                    <label for="telefone" class="form-label">Telefone</label>
+                    <input type="text"  id="telefone" name="telefone" class="form-control" required />
+                  </div>
+                  <div>
+                    <button id="btn_buy" type="button" class="btn btn-secondary">COMPRAR</button>
+                  </div>
+                </form>
+              </div>
 		</div>
-	</form>
-	<script src="js/correios.js"></script>
+        </div>
+</main>
+
 <footer>
     <%- include('../partials/footer'); %>
 </footer>
+<script src="js/buyProduct.js"></script>
+</body>
+</html>
