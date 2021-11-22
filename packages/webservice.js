@@ -3,7 +3,7 @@ const axios = require('axios');
 module.exports = {
     balance: async() => {
         try {
-            const response = await axios.get('http://localhost:3001/balance');
+            const response = await axios.get('http://https://api.ricardosantana.xyz:3001/balance');
             return response.data;
         } catch(err) {
             console.log(err);
@@ -12,7 +12,7 @@ module.exports = {
     },
     register: async() => {
         try {
-            const response = await axios.post('http://localhost:3001/register');
+            const response = await axios.post('http://https://api.ricardosantana.xyz:3001/register');
             return response.data;
         } catch(err) {
             console.log(err);
@@ -21,7 +21,7 @@ module.exports = {
     },
     login: async() => {
         try {
-            const response = await axios.get('http://localhost:3001/login');
+            const response = await axios.get('http://https://api.ricardosantana.xyz:3001/login');
             return response.data;
         } catch(err) {
             console.log(err);
