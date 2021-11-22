@@ -21,7 +21,7 @@ const buy = {
         }
     },
     send: async () => {
-        const response = await fetch('http://localhost:3001/order', {
+        const response = await fetch('https://api.ricardosantana.xyz/order', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
