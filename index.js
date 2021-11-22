@@ -47,7 +47,7 @@ app.get('/politicy', function (req, res) {
 }); */
 
 app.get('/admin', async function (req, res) {
-    const response = await fetch('http://localhost:3001/balance', {
+    const response = await fetch('https://api.ricardosantana.xyz/balance', {
         method: 'GET',
         headers: {
             'Content-Type': 'Application/json',
@@ -55,7 +55,7 @@ app.get('/admin', async function (req, res) {
         }
     });
     const data = await response.json();
-    const order = await fetch('http://localhost:3001/orders', {
+    const order = await fetch('https://api.ricardosantana.xyz/orders', {
         method: 'GET',
         headers: {
             'Content-Type': 'Application/json',
